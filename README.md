@@ -10,6 +10,7 @@ In these drills, you'll practice determining the big O complexity of algorithms.
 ## 2. Even or odd
 What is the Big O of the following algorithm? Explain your answer
 
+```
 function isEven(value) {
     if (value % 2 === 0) {
         return true;
@@ -18,10 +19,12 @@ function isEven(value) {
         return false;
     }
 }
+```
+
 ## 3. Are you here?
 What is the Big O of the following algorithm? Explain your answer
 
-function areYouHere(arr1, arr2) {
+```function areYouHere(arr1, arr2) {
     for (let i = 0; i < arr1.length; i++) {
         const el1 = arr1[i];
         for (let j = 0; j < arr2.length; j++) {
@@ -31,6 +34,8 @@ function areYouHere(arr1, arr2) {
     }
     return false;
 }
+```
+
 ## 4. Doubler
 What is the Big O of the following algorithm? Explain your answer
 
