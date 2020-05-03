@@ -1,0 +1,6 @@
+2. Even or odd
+What is the Big O of the following algorithm? Explain your answer
+
+function isEven(value) { if (value % 2 === 0) { return true; } else return false; } }
+
+This has a a polynomial time complexity of O(n^2) because the function may require two levels of looping
