@@ -1,0 +1,11 @@
+4. Doubler
+What is the Big O of the following algorithm? Explain your answer
+
+    for (let i = 0; i < array.length; i++) {
+        array[i] *= 2;
+    }
+    return array;
+}
+
+
+This function has a linear time of O(2), because the function has a running times that is directly proportional to the size of the input
