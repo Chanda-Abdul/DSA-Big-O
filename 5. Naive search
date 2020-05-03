@@ -1,0 +1,13 @@
+5. Naive search
+What is the Big O of the following algorithm? Explain your answer
+
+function naiveSearch(array, item) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === item) {
+            return i;
+        }
+    }
+}
+
+
+This function also has linear time complexity because the amount of time it takes to get to the output is directly proportional to the size of the input
