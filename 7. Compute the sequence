@@ -1,0 +1,22 @@
+7. Compute the sequence
+What does the following algorithm do? What is its runtime complexity? Explain your answer
+
+function compute(num) {
+    let result = [];
+    for (let i = 1; i <= num; i++) {
+
+        if (i === 1) {
+            result.push(0);
+        }
+        else if (i === 2) {
+            result.push(1);
+        }
+        else {
+            result.push(result[i - 2] + result[i - 3]);
+        }
+    }
+    return result;
+}
+
+
+This function accepts an integer and turns it into an array of numbers, where the number of items in the array is equal to the integer.  So the output steadily increases as the number of the integer increases as long as it's a positive number.  So this function has logarithmic time of Logarithmic time O(log(num))
