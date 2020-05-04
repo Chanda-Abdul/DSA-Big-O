@@ -1,0 +1,8 @@
+9. Random element
+What is the Big O of the following algorithm? Explain your answer
+
+function findRandomElement(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+This algorithm has a constant time of O(1).  The function must pick a random integer within a range, and then retrieve the item in the array at that index. Neither of these operations depends on input size.
