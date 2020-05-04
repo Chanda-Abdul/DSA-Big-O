@@ -19,4 +19,4 @@ function compute(num) {
 }
 
 
-This function accepts an integer and turns it into an array of numbers, where the number of items in the array is equal to the integer.  So the output steadily increases as the number of the integer increases as long as it's a positive number.  So this function has logarithmic time of Logarithmic time O(log(num))
+This function accepts an integer and turns it into an array of numbers, where the number of items in the array is equal to the integer.  So the output steadily increases as the number of the integer increases as long as it's a positive number.  So this function has logarithmic time O(log(num))
