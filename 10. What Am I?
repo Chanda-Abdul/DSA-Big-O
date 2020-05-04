@@ -1,0 +1,14 @@
+10. What Am I?
+What does the following algorithm do? What is the Big O of the following algorithm? Explain your answer
+
+    if (n < 2 || n % 1 !== 0) {
+        return false;
+    }
+    //if n is > 2 or even return false
+    for (let i = 2; i < n; ++i) {
+        if (n % i === 0) return false;
+    }
+    return true;
+}
+
+Seems like this function is test for odd numbers greater than 2, then trying to figure out what that number is.  This algorithm has a polynomial time of O(n^2) because not matter what the input you will need to loop through the nested loops.
