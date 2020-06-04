@@ -3,4 +3,4 @@ What is the Big O of the following algorithm? Explain your answer
 
 function isEven(value) { if (value % 2 === 0) { return true; } else return false; } }
 
-This has a a polynomial time complexity of O(n^2) because the function may require two levels of looping
+This has a a polynomial time complexity of O(1) because the function is constant. You will only ever have one number input, and the function will always perform the same action
