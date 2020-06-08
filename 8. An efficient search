@@ -24,4 +24,4 @@ function efficientSearch(array, item) {
     return -1;
 }
 
-With this function as the input increaases the output will always be the same size, and the function only needs to perform one operation but it needs to check every item in the array and make note of it's index if it is a match. So this function has logartihmic time of O(log(array.length))
+This function has a Logarithmic time O(log(n)), find the item in the middle of the array, and check to see if that is correct. otherwise it keeps checking until we find the correct item.  returning -1 if the item is not in the array. 
