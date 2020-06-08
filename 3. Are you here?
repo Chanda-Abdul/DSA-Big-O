@@ -12,4 +12,4 @@ function areYouHere(arr1, arr2) {
     return false;
 }
 
-This function has a polynomial time complexity of O(n^3)) because the function must loop three times
+This function has a Polynomial time of O(n^2) because of nested loops with linear iterations
