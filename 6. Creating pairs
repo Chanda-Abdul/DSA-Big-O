@@ -9,4 +9,4 @@ function createPairs(arr) {
     }
 }
 
-This function has a polynomial time of O(n^2) because of the nested loops, and the output increase exponetially when the input increases
+This function has a polynomial time of O(n^k) because of the nested loops, and the output increase exponetially when the input increases
