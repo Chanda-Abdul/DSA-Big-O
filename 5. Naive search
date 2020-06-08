@@ -10,4 +10,4 @@ function naiveSearch(array, item) {
 }
 
 
-This function also has linear time complexity because the amount of time it takes to get to the output is directly proportional to the size of the input
+This function also has O(n) linear time complexity because once it find the item in the array it stops
