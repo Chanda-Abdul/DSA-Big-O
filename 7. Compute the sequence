@@ -18,5 +18,8 @@ function compute(num) {
     return result;
 }
 
+This function has a time complexity of O(n) linear because we are looping through the result array
+on the first iteration, 0 is pushed to the end of the array
+on the next iteration 1 is push to the array
+then each addition number pushed the next value in the fibonnaci sequence
 
-This function accepts an integer and turns it into an array of numbers, where the number of items in the array is equal to the integer.  So the output steadily increases as the number of the integer increases as long as it's a positive number.  So this function has logarithmic time O(log(num))
