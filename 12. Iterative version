@@ -3,19 +3,134 @@ Solve the drills 1 - 7 from your previous checkpoint (Recursion) iteratively.
 
 1. Counting Sheep
 
+const countSheep = function(sheep) {
+  //Base case
+  if (sheep <= 0) {
+    console.log(`All sheep jumped over the fence`)
+  } else {
+  //General Case
+  console.log(`${sheep}: Another sheep jumps over the fence`)
+  countSheep((sheep -1))
+  }
+}
+
+
+console.log(countSheep(4))
+
+This has a linear time of O(n) the amount time complexity increases based on the size of the input
+
 
 2. Power Calculator
+
+const powerCalculator = function(base, exponent) {
+  //Base case
+  if (exponent <= 0) {
+    console.log(`exponent should be >= 0`)
+  } else {
+  //General Case
+  console.log(base**exponent)
+    exponent--
+  powerCalculator(base, exponent)
+  }
+}
+
+let shouldbe100 = powerCalculator(10, 2)
+
+
+This has a linear time of O(n) the amount time complexity increases based on the size of the input
 
 
 3. Reverse String
 
+const reverseString = function(string) {
+  //Base case
+if (string.length <= 1) {
+return string;
+}
+  //recursive case
+return string[string.length - 1] + reverseString(string.slice(0, -1))
+}
+
+
+
+let forwards = [1, 2, 3, 4]
+
+console.log(reverseString(forwards))
+
+This has a linear time of O(n) the amount time complexity increases based on the size of the input
+
 
 4. nth Triangular Number
 
+function triangle(nums) {
+  //Base case
+if (nums <= 1) {
+return nums;
+}
+  //recursive case
+return  nums + triangle(nums - 1)
+}
+
+console.log(triangle(1))
+console.log(triangle(2))
+console.log(triangle(3))
+console.log(triangle(4))
+console.log(triangle(5))
+console.log(triangle(6))
+console.log(triangle(7))
+console.log(triangle(8))
+console.log(triangle(9))
+
+This has a linear time of O(n) the amount time complexity increases based on the input
+
 5. String Splitter
+
+const splitString = function(string, separator) {
+  //Base case
+if (!string) {
+return '';
+}
+  //recursive case
+  let curr = string[0]
+  if (curr == separator) {
+    curr = ''
+  }
+  return curr + splitString(string.slice(1), separator)
+}
+
+console.log(splitString("02/20/2020", "/"));
+
+This function has a linear time of O(n) based on the size of the input
 
 
 6. Fibonacci
 
+function fibonacci(num) {
+  //base case
+  if (num === 0) {
+    return 0
+  }
+  //recursive case
+  if (num === 1) {
+    return 1
+  }
+  return fibonacci(num-2) + fibonacci(num-1)
+  }
+
+console.log(fibonacci(7))
+
+This function has a linear time of O(n) based on the size of the input
+
 
 7. Factorial
+
+function factorial(num){
+  if (num === 1) {
+    return num;
+  }
+  return num * factorial(num - 1);
+}
+
+factorial(5);
+
+This function has a linear time of O(n) based on the size of the input
