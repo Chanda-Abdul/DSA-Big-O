@@ -1,6 +1,7 @@
-6. Creating pairs:
+# 6. Creating pairs:
 What is the Big O of the following algorithm? Explain your answer
 
+````
 function createPairs(arr) {
     for (let i = 0; i < arr.length; i++) {
         for(let j = i + 1; j < arr.length; j++) {
@@ -8,5 +9,6 @@ function createPairs(arr) {
         }
     }
 }
+````
 
-This function has a polynomial time of O(n^k) because of the nested loops, and the output increase exponetially when the input increases
+This function has a polynomial time of `O(n^k)` because of the two nested loops, and the output increase exponetially when the input increases
