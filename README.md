@@ -1,3 +1,107 @@
+# Big O classifications
+
+![](https://curricula.thinkful.com/curricula/eef6045a-3b44-40b0-a7ab-c359265e4d1c/dsa-v1/assets2/dsa_big_o/BigO.png)
+
+## Constant time O(1)
+- Constant time complexity is the "holy grail". 
+- No matter the size of your input, the algorithm will take the same amount of time to complete. 
+- Examples of O(1) algorithms are accessing an array item or performing basic arithmetic operations (e.g., adding 2 numbers). The following is an example of an algorithm with O(1) runtime complexity.
+
+````
+function getRandomItem(array) {
+    let ticks = 0;
+    // Get a random number and access that element in the array
+    const item = array[Math.floor(Math.random() * array.length)];
+    ticks++;
+    return {
+        result: item,
+        ticks: ticks
+    };
+}
+````
+
+## Logarithmic time O(log(n))
+- Logarithmic time complexity `(O(log n))` is the next best thing after constant time. 
+- While logarithmic time complexity algorithms do take longer with larger inputs, running time increases slowly.
+- It is also characteristic of logarithmic algorithms that they cut the problem size in half each round through.
+
+````
+function howManyLessThanNitems(arr, n) {
+    let ticks = 0;
+    /* If the 1st element in the array is greater than `n`, return 0,
+       because no items in the array are less than `n`. */
+    if (!arr.length || arr[0] >= n) {
+        ticks++;
+        return 0;
+    }
+
+    let lowIndex = 0, highIndex = arr.length;
+
+    while (highIndex > lowIndex) {
+        // Find midpoint
+        let midIndex = Math.floor((highIndex + lowIndex) / 2);
+        /* If `midIndex` element is greater than `n`, that means all elements
+           to the right of `midIndex` are also greater than `n`, so
+           we only need to focus on elements to the left of `midIndex`.
+           We set `highIndex` to the current value of `midIndex` so next time
+           through the loop, we'll only look at the left half */
+        if (arr[midIndex] >= n) {
+            highIndex = midIndex;
+            ticks++;
+        }
+
+        /* If the element to the right of `midIndex` is less than `n`, then we
+           know that we need to check the items to the right of `midIndex`, so
+           we set `lowIndex` to the current value of `midIndex`, so that next
+           time through the loop we only look at the right side */
+        else if (arr[midIndex + 1] < n) {
+            lowIndex = midIndex;
+            ticks++;
+        }
+
+        /* Otherwise, if the element to the right of `midIndex` is greater
+           than or equal to `n`, we know that the item at `midIndex` is the last
+           item that's less than `n`, so we return `midIndex +  1` to get the total
+           number of items that are less than `n` */
+        else {
+            ticks++;
+            return {
+                result: midIndex + 1,
+                ticks: ticks
+            }
+        }
+    }
+}
+
+howManyLessThanNitems([1,2,3], 2);
+howManyLessThanNitems([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100], 99 );
+````
+
+## Linear time O(n)
+- Algorithms with linear time complexity `(O(n))` have running times that are directly proportional to the size `(n)` of the input. Given input `a` and input `b`, where `b` is twice as large as `a`, it will take a linear algorithm 2 times as long to process `b` compared to `a`.
+- Some examples of linear complexity algorithms are summing the elements in an array and finding the minimum or maximum value in an array.
+
+````
+function findMin(array){
+    let min = array[0], ticks = 1;
+    for (let i = 1; i < array.length; i++) {
+        ticks++;
+        if (array[i] < min) {
+            min = array[i];
+        }
+    }
+    return {
+        result: min,
+        ticks: ticks
+    };
+}
+
+findMin([1,2,3]);
+findMin([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+findMin([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]);
+````
+
+
 # Data Structures & Alogorithms -Big-O Notation Drills
 
 In these drills, you'll practice determining the big O complexity of algorithms. For each drill, we'll provide a code snippet with a function, and you'll work out the big O complexity by analyzing the code without running it.
