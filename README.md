@@ -1,6 +1,6 @@
 # Big O classifications
 
-![](https://curricula.thinkful.com/curricula/eef6045a-3b44-40b0-a7ab-c359265e4d1c/dsa-v1/assets2/dsa_big_o/BigO.png)
+![](https://he-s3.s3.amazonaws.com/media/uploads/ece920b.png)
 
 ## Constant time O(1)
 - Constant time complexity is the "holy grail". 
